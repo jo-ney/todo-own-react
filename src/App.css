@@ -21,3 +21,52 @@ body{
 .btn-delete{
     @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-red-400;
 }
+
+
+/* Centered full-screen loader */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #212121;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Spinner style */
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #e0e0e0;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Spin animation */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* App content styling */
+  .app-content {
+    padding: 2rem;
+    animation: fadeIn 0.6s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
