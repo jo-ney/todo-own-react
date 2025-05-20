@@ -6,13 +6,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading delay (e.g., wait for assets or data)
-    window.addEventListener("load", () => {
       // Give a small timeout if you want smoother transition
       const timeout = setTimeout(() => {
         setIsLoading(false);
       }, 800); // optional delay
-    });
 
     return () => clearTimeout(timeout);
   }, []);
