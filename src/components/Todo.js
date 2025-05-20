@@ -126,23 +126,25 @@ export default function Todo(){
         setEditId(-1)
     }
 
-    return<section className='flex flex-col p-10 gap-3 m-auto w-1/2'>
-            <h1 className='text-white text-center'>Todo</h1>
-                <div className="text-center">
-            <input onChange={(e)=>setTitle(e.target.value)} value={title} className='border rounded border-black me-2 p-1' placeholder='Title' />
-                <input onChange={(e)=>setDescription(e.target.value)} value={description} className='border rounded border-black me-2 p-1' placeholder='Description' />
-                <input onClick={addTodo} className='btn' type='submit' value='Add' />
+    return<section className='flex flex-col p-10 gap-3 m-auto md:w-1/2'>
+            <h1 className='text-white text-center font-bold'>Todo</h1>
+                <div className="text-center  max-sm:flex max-sm:flex-col">
+                    <input onChange={(e)=>setTitle(e.target.value)} value={title} className='border rounded border-black me-2 p-1' placeholder='Title' />
+                    <input onChange={(e)=>setDescription(e.target.value)} value={description} className='border rounded border-black me-2 p-1' placeholder='Description' />
+                    <input onClick={addTodo} className='btn  max-sm:w-[50px] max-sm:ms-auto max-sm:me-auto' type='submit' value='Add' />
                 </div>
 
                 <h3 className="text-green-500">{message}</h3>
                 <h3 className="text-red-500">{error}</h3>
-            <ol className="list-decimal text-white m-auto">
+            <ol className="list-decimal text-white sm:m-auto">
                 {
                     todos.map((item)=><>
-                        {editId == -1 || editId !== item._id ? <li className="mx-3 mb-2" key={item._id}>{item.title} : {item.description} <button className="btn-edit mx-3 mt-2 mb-3" onClick={()=>editTodo(item)} >Edit</button> <button className='btn-delete mt-2 mb-3' value={item._id} onClick={(e)=>{deleteList(e.target.value)}} >Delete</button></li> 
+                        {editId == -1 || editId !== item._id ? <> <li className="mx-3" key={item._id}>{item.title} : {item.description}</li>
+                        <button className="btn-edit ms-3 me-1 mt-1 mb-3" onClick={()=>editTodo(item)} >Edit</button><button className='btn-delete mt-1 mb-3' value={item._id} onClick={(e)=>{deleteList(e.target.value)}} >Delete</button></>
                         :
-                        <li className="my-3"><input onChange={(e)=>setEditTitle(e.target.value)} value={editTitle} className='text-black border rounded border-black me-2 p-1' placeholder='Title' />
-                <input onChange={(e)=>setEditDescription(e.target.value)} value={editDescription} className='text-black border rounded border-black me-2 p-1' placeholder='Description' /> <button className="btn me-3 mt-2 mb-3" value={item._id} onClick={(e)=>{update(e.target.value)}} >Update</button> <button className='btn mt-2 mb-3' value={item._id} onClick={()=>{setEditId(-1)}} >Cancel</button></li>
+                        <><li className="mx-3"><input onChange={(e)=>setEditTitle(e.target.value)} value={editTitle} className='text-black border rounded border-black me-2 p-1' placeholder='Title' />
+                <input onChange={(e)=>setEditDescription(e.target.value)} value={editDescription} className='text-black border rounded border-black me-2 p-1' placeholder='Description' /></li>
+                <button className="btn ms-3 mt-1 mb-3" value={item._id} onClick={(e)=>{update(e.target.value)}} >Update</button> <button className='btn mt-2 mb-3' value={item._id} onClick={()=>{setEditId(-1)}} >Cancel</button></>
                         }
                         {/* {editId == -1 || editId !== item._id ? <button className="btn me-3 mt-2 mb-3" onClick={()=>editTodo(item)} >Edit</button> : <button className="btn me-3 mt-2 mb-3" value={item._id} onClick={(e)=>{update(e.target.value)}} >Update</button>}
                         {editId == -1 || editId !== item._id ? <button className='btn mt-2 mb-3' value={item._id} onClick={(e)=>{deleteList(e.target.value)}} >Delete</button> : <button className='btn mt-2 mb-3' value={item._id} onClick={()=>{setEditId(-1)}} >Cancel</button>} */}

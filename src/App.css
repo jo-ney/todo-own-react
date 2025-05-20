@@ -7,13 +7,13 @@ body{
 }
 
 .btn{
-    @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-green-500;
+    @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-green-400;
 }
 
 .btn-edit{
-    @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-orange-500;
+    @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-orange-400;
 }
 
 .btn-delete{
-    @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-red-500;
+    @apply px-2 py-0.5 rounded text-black bg-blue-400 hover:bg-red-400;
 }
