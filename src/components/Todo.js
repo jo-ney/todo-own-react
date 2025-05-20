@@ -144,7 +144,7 @@ export default function Todo(){
                         :
                         <><li className="mx-3"><input onChange={(e)=>setEditTitle(e.target.value)} value={editTitle} className='text-black border rounded border-black me-2 p-1' placeholder='Title' />
                 <input onChange={(e)=>setEditDescription(e.target.value)} value={editDescription} className='text-black border rounded border-black me-2 p-1' placeholder='Description' /></li>
-                <button className="btn ms-3 mt-1 mb-3" value={item._id} onClick={(e)=>{update(e.target.value)}} >Update</button> <button className='btn mt-2 mb-3' value={item._id} onClick={()=>{setEditId(-1)}} >Cancel</button></>
+                <button className="btn ms-3 mt-1 mb-3" value={item._id} onClick={(e)=>{update(e.target.value)}} >Update</button> <button className='btn-edit mt-2 mb-3' value={item._id} onClick={()=>{setEditId(-1)}} >Cancel</button></>
                         }
                         {/* {editId == -1 || editId !== item._id ? <button className="btn me-3 mt-2 mb-3" onClick={()=>editTodo(item)} >Edit</button> : <button className="btn me-3 mt-2 mb-3" value={item._id} onClick={(e)=>{update(e.target.value)}} >Update</button>}
                         {editId == -1 || editId !== item._id ? <button className='btn mt-2 mb-3' value={item._id} onClick={(e)=>{deleteList(e.target.value)}} >Delete</button> : <button className='btn mt-2 mb-3' value={item._id} onClick={()=>{setEditId(-1)}} >Cancel</button>} */}
