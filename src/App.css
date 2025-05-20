@@ -4,6 +4,10 @@
 
 body{
     background: #242424;
+    background-image: url('../public/images/pexels-lastly-1671643.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
 }
 
 .btn{
